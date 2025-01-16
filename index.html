@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 App</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="app.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Web3 App</h1>
+
+        <!-- Conectare MetaMask -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>MetaMask Connection</h3>
+                <button id="connect" class="btn btn-primary">Connect to MetaMask</button>
+                <button id="logout" class="btn btn-secondary d-none">Logout</button>
+                <p id="account" class="mt-2">Account: Not connected</p>
+                <p id="balance">Balance: Not connected</p>
+            </div>
+        </div>
+
+        <!-- Add Reputation -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>Add Reputation</h3>
+                <div class="mb-3">
+                    <label for="userAddress" class="form-label">User Address:</label>
+                    <input type="text" id="userAddress" class="form-control" placeholder="Enter user address">
+                </div>
+                <div class="mb-3">
+                    <label for="reputationPoints" class="form-label">Reputation Points:</label>
+                    <input type="number" id="reputationPoints" class="form-control" placeholder="Enter reputation points">
+                </div>
+                <button id="addReputation" class="btn btn-success">Add Reputation</button>
+                <p id="status" class="mt-2"></p>
+            </div>
+        </div>
+
+        <!-- Get Reputation -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>Get Reputation</h3>
+                <div class="mb-3">
+                    <label for="checkUserAddress" class="form-label">User Address:</label>
+                    <input type="text" id="checkUserAddress" class="form-control" placeholder="Enter user address">
+                </div>
+                <button id="getReputation" class="btn btn-info">Get Reputation</button>
+                <p id="reputationResult" class="mt-2"></p>
+            </div>
+        </div>
+
+        <!-- Transfer ETH -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>Transfer ETH</h3>
+                <div class="mb-3">
+                    <label for="recipientAddress" class="form-label">Recipient Address:</label>
+                    <input type="text" id="recipientAddress" class="form-control" placeholder="Enter recipient address">
+                </div>
+                <div class="mb-3">
+                    <label for="ethAmount" class="form-label">Amount in ETH:</label>
+                    <input type="number" id="ethAmount" class="form-control" placeholder="Enter amount in ETH">
+                </div>
+                <button id="sendEther" class="btn btn-warning">Send Ether</button>
+                <p id="transferStatus" class="mt-2"></p>
+            </div>
+        </div>
+
+        <!-- Calculate Average Reputation -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>Calculate Average Reputation</h3>
+                <div class="mb-3">
+                    <label for="user1Address" class="form-label">User 1 Address:</label>
+                    <input type="text" id="user1Address" class="form-control" placeholder="Enter first user address">
+                </div>
+                <div class="mb-3">
+                    <label for="user2Address" class="form-label">User 2 Address:</label>
+                    <input type="text" id="user2Address" class="form-control" placeholder="Enter second user address">
+                </div>
+                <button id="calculateAverage" class="btn btn-info">Calculate Average</button>
+                <p id="averageResult" class="mt-2"></p>
+            </div>
+        </div>
+
+        <!-- Calculate Average ETH Balance -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>Calculate Average ETH Balance</h3>
+                <div class="mb-3">
+                    <label for="ethUser1Address" class="form-label">User 1 Address:</label>
+                    <input type="text" id="ethUser1Address" class="form-control" placeholder="Enter first user address">
+                </div>
+                <div class="mb-3">
+                    <label for="ethUser2Address" class="form-label">User 2 Address:</label>
+                    <input type="text" id="ethUser2Address" class="form-control" placeholder="Enter second user address">
+                </div>
+                <button id="calculateAverageEth" class="btn btn-warning">Calculate Average ETH</button>
+                <p id="averageEthResult" class="mt-2"></p>
+            </div>
+        </div>
+
+        <!-- Transaction History -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>Transaction History</h3>
+                <ul id="history" class="list-group"></ul>
+                <button id="clearHistory" class="btn btn-danger mt-3">Clear Transaction History</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
